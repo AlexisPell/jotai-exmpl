@@ -9,12 +9,12 @@ JSON source: https://raw.githubusercontent.com/jherr/todos-four-ways/master/data
 */
 
 function TopBar() {
-  const [, setTodos] = useAtom(todosAtom);
   const onLoad = () => {
     fetch('https://raw.githubusercontent.com/jherr/todos-four-ways/master/data/todos.json')
       .then((r) => r.json())
       .then((d: Todo[]) => setTodos(d));
   };
+  const [, setTodos] = useAtom(todosAtom);
 
   return (
     <Grid pt={2} templateColumns='1fr 1fr' columnGap='3'>
